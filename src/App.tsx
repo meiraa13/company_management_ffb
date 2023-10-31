@@ -1,3 +1,6 @@
+import { About } from "./components/About"
+import { CompanyList } from "./components/CompanyList"
+import { Header } from "./components/Header"
 import "./globalStyles.less"
 
 
@@ -6,8 +9,15 @@ function App() {
 
   return (
     <>
-      <h1>hello, world!</h1>
+      <Header />
+      <main className="container">
+        <About />
+        <CompanyList />
+      </main>
     </>
+      
+
+
   )
 }
 
