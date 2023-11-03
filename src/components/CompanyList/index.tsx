@@ -2,19 +2,23 @@ import { useContext } from "react"
 import { CompanyCard } from "../CompanyCard"
 import "./styles.less"
 import { CompanyContext } from "../../providers/CompanyContext"
+import { ModalDelete } from "../ModalDelete"
+import { ModalUpdate } from "../ModalUpdate"
 
 export function CompanyList(){
-    const {company, setCompany} = useContext(CompanyContext)
+    const {companies, modalDelete, modalUpdate } = useContext(CompanyContext)
 
     return(
         <section className="section-company">
+          {modalDelete && <ModalDelete />}
+          {modalUpdate && <ModalUpdate />}
             <ul>
               {
-                company.length >0 ?
-                company.map((company)=>(
+                companies.length >0 ?
+                companies.map((company)=>(
                     <CompanyCard key={company.id} company={company} />
                 ))
-                :<h2>ainda não possui empresas cadastradas</h2>
+                :<h3 className="empty-db">Você ainda não possui empresas registradas, clique no botão para cadastrar</h3>
               }
             </ul>
         </section>

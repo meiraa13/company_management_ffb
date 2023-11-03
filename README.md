@@ -1,27 +1,31 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Aplicação depende de api local para funcionamento, checar repositorio:
 
-Currently, two official plugins are available:
+- [@API(https://github.com/meiraa13/company_management_bff)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Essa aplicação permite a qualquer usuário criar uma empresa no banco de dados, editar, visualizar e excluir.
+No formulário de cadastro os campos cnpj, cep e telefone estão tratados para receber suas respectivas formatações 
+e o campo cep busca na api externa "viacep" para preencher automaticamente o campo de endereço
 
-## Expanding the ESLint configuration
+## Tecnologias utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Typescript
+- React com vite
+- Less
+- Zod
+- react-hook-form
+- use-mask-input
+- react-icons
+- react-toastify
 
-- Configure the top-level `parserOptions` property like this:
+Após clonar o repositório para sua maquina rode o comando abaixo para instalar as dependencias do projeto:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```
+npm install
+```
+com as dependencias instaladas rode o seguinte comando e já conseguirá acessar a aplicação no seu servidor local:
+
+```
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
